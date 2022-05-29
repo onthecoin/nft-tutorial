@@ -81,9 +81,17 @@ impl NonFungibleTokenCore for Contract {
         token_id: TokenId,
         memo: Option<String>,
     ) {
-        /*
-            FILL THIS IN
-        */
+        assert_one_yocto();
+    //get the sender to transfer the token from the sender to the receiver
+    let sender_id = env::predecessor_account_id();
+
+    //call the internal transfer method
+    self.internal_transfer(
+        &sender_id,
+        &receiver_id,
+        &token_id,
+        memo,
+    );
     }
 
     //implementation of the transfer call method. This will transfer the NFT and call a method on the reciver_id contract
