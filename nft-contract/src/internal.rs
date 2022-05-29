@@ -134,6 +134,7 @@ impl Contract {
         sender_id: &AccountId,
         receiver_id: &AccountId,
         token_id: &TokenId,
+        approval_id: Option<u64>,
         memo: Option<String>,
     ) -> Token {
         //get the token object by passing in the token_id
