@@ -56,6 +56,8 @@ pub struct JsonToken {
     pub owner_id: AccountId,
     //token metadata
     pub metadata: TokenMetadata,
+        //list of approved account IDs that have access to transfer the token. This maps an account ID to an approval ID
+    pub approved_account_ids: HashMap<AccountId, u64>,
 }
 
 pub trait NonFungibleTokenMetadata {
