@@ -16,6 +16,7 @@ impl Contract {
         let token = Token {
             //set the owner ID equal to the receiver ID passed into the function
             owner_id: receiver_id,
+            //we set the approved account IDs to the default value (an empty map)
         };
 
         //insert the token ID and token struct and make sure that the token doesn't exist
