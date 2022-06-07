@@ -143,6 +143,8 @@ impl Contract {
 
         //if the sender doesn't equal the owner, we panic
 		if sender_id != &token.owner_id {
+            //if the token's approved account IDs doesn't contain the sender, we panic
+			if !token.approved_account_ids.contains_key(sender_id) {
 			env::panic_str("Unauthorized");
 		}
         // If they included an approval_id, check if the sender's actual approval_id is the same as the one included

@@ -61,18 +61,6 @@ pub struct JsonToken {
 
 }
 
-//The Json token is what will be returned from view calls. 
-#[derive(Serialize, Deserialize)]
-#[serde(crate = "near_sdk::serde")]
-pub struct JsonToken {
-    //token ID
-    pub token_id: TokenId,
-    //owner of the token
-    pub owner_id: AccountId,
-    //token metadata
-    pub metadata: TokenMetadata,
-}
-
 pub trait NonFungibleTokenMetadata {
     //view call for returning the contract metadata
     fn nft_metadata(&self) -> NFTContractMetadata;
